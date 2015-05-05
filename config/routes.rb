@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  root 'users#show'
+  resources :tweets, only: [:index, :create, :destroy]
+  resources :users, only: [:show, :index] do
+    resources :tweets, only: [:show]
+    resources :follows, only: [:create, :destroy]
+  end
+  get 'profile', to: 'users#show'
+  # get 'users/tweets', to: redirect('/users/:user_id/tweets')
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

@@ -1,0 +1,19 @@
+.profile
+  .item= current_user.username
+  .item= current_user.email
+  = link_to "Sign out", destroy_user_session_path, method: :delete
+
+= form_for(Tweet.new) do |f|
+  = f.text_field :content
+  = f.submit
+
+%div.tweets
+  - @tweets.each do |tweet|
+    %div.tweet= tweet.content
+    = button_to "Delete", tweet_path(tweet.id),  method: :delete
+
+%div.followees
+  %h2 People I Follow
+  - current_user.followees.each do |followee|
+    %div.followee= followee.username
+    = button_to "Unfollow", user_follow_path(user_id: current_user.id, id: followee.id),  method: :delete

@@ -1,0 +1,31 @@
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet {
+  margin: 2%;
+  padding: 5%;
+  border: 1px solid blue;
+  border-radius: 10px;
+  background-color: #e4f1fd;
+}
+
+.profile {
+  margin: 2%;
+  padding: 5%;
+  border-radius: 10px;
+  border: 1px solid blue;
+  background-color: #cbd3db;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.followee {
+  margin: 2%;
+  padding: 5%;
+  background-color: #ccffcc;
+  border-radius: 10px;
+  border: 1px solid blue;
+}

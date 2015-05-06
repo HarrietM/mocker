@@ -5,10 +5,3 @@
     = link_to "Sign out", destroy_user_session_path, method: :delete
 
 %div{"ng-view" => "ng-view"}
-/ %div{"ng-controller" => "tweetsCtrl"}
-/   %div{"ng-repeat" => "tweet in tweets"}
-/     .tweet {{tweet.content}}
-
-/ %div{"ng-controller" => "followeeCtrl"}
-/   %div{"ng-repeat" => "followee in followees"}
-/     .follow {{followee.username}}

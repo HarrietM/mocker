@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'application#index'
   resources :tweets, only: [:index, :create, :destroy]
+  resources :follows, only: [:index]
   resources :users, only: [:show, :index] do
     resources :tweets, only: [:show]
     resources :follows, only: [:show, :create, :destroy]

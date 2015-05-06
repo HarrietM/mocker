@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :follows, only: [:show, :create, :destroy]
   end
   get 'profile', to: 'users#show'
+  get '/templates/:template', to: 'templates#show'
   # get 'users/tweets', to: redirect('/users/:user_id/tweets')
 
   # You can have the root of your site routed with "root"

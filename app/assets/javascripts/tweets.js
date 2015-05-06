@@ -1,22 +1,21 @@
-var tweets = angular.module('tweetsApp', []);
+var tweets = angular.module('tweetsApp', ["ngRoute"]);
 
- tweets.controller('tweetsCtrl', ['$scope', '$http', function($scope, $http){
-  $scope.tweets = [];
 
- var config = {
-  method: 'GET',
-  url: "/tweets",
-  dataType: 'json'
- }
 
- function loadTweets() {
-  $http(config).
-  success(function(data){
-    console.log(data);
-    $scope.tweets = data;
-  });
- }
+  // tweets.controller('followeeCtrl', ['$scope', '$http', function($scope, $http){
+  //   $scope.followees = [];
 
- loadTweets();
+  //   var followeesConfig = {
+  //     method: 'GET',
+  //     url: '/users/:user_id/follows/:id',
+  //     dataType: 'json',
+  //     // params: {user_id: current_user.id}
+  //   }
 
-}])
+  //   function loadFollowees(){
+  //     $http(followeesConfig).
+  //     success(function(data){
+  //       $scope.followees = data;
+  //     });
+  //   }
+  // }])

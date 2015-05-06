@@ -22,10 +22,23 @@
   justify-content: space-around;
 }
 
-.followee {
+.followee, .user {
   margin: 2%;
   padding: 5%;
   background-color: #ccffcc;
   border-radius: 10px;
   border: 1px solid blue;
+}
+
+.view {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  flex: 2;
+}
+
+.right {
+  flex: 1;
 }

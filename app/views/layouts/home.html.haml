@@ -1,0 +1,9 @@
+%div.navbar
+  .profile
+    .item= current_user.username
+    .item= current_user.email
+    = link_to "Sign out", destroy_user_session_path, method: :delete
+
+%div{"ng-controller" => "tweetsCtrl"}
+  %div{"ng-repeat" => "tweet in tweets"}
+    .tweet {{tweet.content}}

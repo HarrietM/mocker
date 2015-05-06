@@ -1,4 +1,7 @@
-.user= @user.username
-- @user.tweets.each do |tweet|
-  = link_to user_tweet_path(user_id: @user.id ,id: tweet.id), class: 'tweet' do
-    %p= tweet.content
+- @tweets.each do |tweet|
+    = render partial: 'partials/tweet', locals: {tweet: tweet}
+
+
+/ %div{"ng-controller" => "tweetsCtrl"}
+/   %div{"ng-repeat" => "tweet in tweets"}
+/     %p {{tweet.content}}

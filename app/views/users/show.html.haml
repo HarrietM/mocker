@@ -8,9 +8,12 @@
   = f.submit
 
 %div.tweets
-  - @tweets.each do |tweet|
-    %div.tweet= tweet.content
-    = button_to "Delete", tweet_path(tweet.id),  method: :delete
+  %div{"ng-controller" => "tweetsCtrl"}
+    %div{"ng-repeat" => "tweet in tweets"}
+      %p {{tweet.content}}
+    / = render partial: 'partials/tweet', locals: {tweet: tweet}
+    / = button_to "Delete", tweet_path(tweet.id),  method: :delete
+
 
 %div.followees
   %h2 People I Follow

@@ -6,5 +6,6 @@ class UsersController < ApplicationController
 
   def show
     @tweets = User.find(current_user.id).tweets
+    render json: @tweets
   end
 end

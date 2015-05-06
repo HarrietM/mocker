@@ -4,4 +4,6 @@
     .item= current_user.email
     = link_to "Sign out", destroy_user_session_path, method: :delete
 
-%div{"ng-view" => "ng-view"}
+%a{href: "#tweets"} Show Tweets
+%a{href: "#follows"} People I am Following
+%ng-view
